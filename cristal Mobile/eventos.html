@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    
+    <title>Document</title>
+    <style>
+         .navbar {
+      height: 590px;
+      width: 200px;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      background-color: #9f00a5;
+      overflow-x: hidden;
+      padding-top: 20px;
+      transition: margin-left 0.3s;
+    }
+
+    .navbar.hidden {
+      margin-left: -200px;
+    }
+
+    .navbar a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 30px;
+      height: 80px;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #229100;
+    }
+
+    .navbar a.active {
+      background-color: #69006d;
+    }
+
+    .navbar i {
+      margin-bottom: 5px;
+    }
+
+    .navbar span {
+      font-size: 12px;
+    }
+
+
+    .content {
+      margin-left: 40px;
+      padding-top: 50px;
+      padding-right: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .toggle-button {
+      position: fixed;
+      z-index: 3;
+      top: 10px;
+      left: 10px;
+      background-color: #85008a;
+      color: #fff;
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+      border-radius: 15px;
+      transition: background-color 0.3s;
+    }
+
+ 
+
+    .toggle-button:hover {
+      background-color: #9f00a5;
+    }
+
+    /*Navbar end*/
+
+    .footer-navbar {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #9f00a5;
+      text-align: center;
+      padding: 25px 0;
+    }
+
+    .footer-navbar a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+      margin: 0 20px;
+    }
+
+    .footer-navbar a.active {
+      color: #70d300;
+    }
+
+    .footer-navbar .nav-button {
+      display: inline-block;
+      background-color: #ff0000;
+      color: #fff;
+      padding: 8px 12px;
+      padding-left: 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    </style>
+</head>
+
+
+<body>
+
+    <!--Navbar-->
+    <button class="toggle-button" onclick="toggleNavbar()"><i class="fa fa-bars" style="width: 20px;"></i></button>
+
+<div class="navbar hidden" id="navbar">
+  <a href="#" class="active">
+    <i class="fa fa-home"></i>
+    <span>Página Inicial</span>
+  </a>
+  <a href="#">
+    <i class="fa fa-envelope"></i>
+    <span>Mensagens</span>
+  </a>
+  <a href="cronometro.html">
+    <i class="fa fa-stopwatch"></i>
+    <span>Cronômetro</span>
+  </a>
+  <a href="#">
+    <i class="fa fa-user"></i>
+    <span>Cadastro</span>
+  </a>
+  <a href="configuração.html">
+    <i class="fa fa-cog"></i>
+    <span>Configurações</span>
+  </a>
+</div>
+    
+    <div class="footer-navbar">
+        <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a>
+        <a href="notificações.html"><i class='fas fa-bell fa-sm' style='color:#ffffff'></i></i> Notificações</a>
+      </div>
+
+      <script>
+        function toggleNavbar() {
+          var navbar = document.getElementById("navbar");
+          navbar.classList.toggle("hidden");
+        }
+        </script>
+        
+</body>
+</html>

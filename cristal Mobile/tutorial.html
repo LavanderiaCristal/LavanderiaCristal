@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tutorial Lavanderia Cristal Self Service</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.navbar {
+      height: 590px;
+      width: 200px;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      background-color: #9f00a5;
+      overflow-x: hidden;
+      padding-top: 20px;
+      transition: margin-left 0.3s;
+    }
+
+    .navbar.hidden {
+      margin-left: -200px;
+    }
+
+    .navbar a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 30px;
+      height: 80px;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #229100;
+    }
+
+    .navbar a.active {
+      background-color: #69006d;
+    }
+
+    .navbar i {
+      margin-bottom: 5px;
+    }
+
+    .navbar span {
+      font-size: 12px;
+    }
+
+
+    .content {
+      margin-left: 40px;
+      padding-top: 50px;
+      padding-right: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .toggle-button {
+      position: fixed;
+      z-index: 3;
+      top: 10px;
+      left: 10px;
+      background-color: #85008a;
+      color: #fff;
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+      border-radius: 15px;
+      transition: background-color 0.3s;
+    }
+
+ 
+
+    .toggle-button:hover {
+      background-color: #9f00a5;
+    }
+
+    /*Navbar end*/
+
+    .footer-navbar {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #9f00a5;
+      text-align: center;
+      padding: 25px 0;
+    }
+
+    .footer-navbar a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+      margin: 0 20px;
+    }
+
+    .footer-navbar a.active {
+      color: #70d300;
+    }
+
+    .footer-navbar .nav-button {
+      display: inline-block;
+      background-color: #ff0000;
+      color: #fff;
+      padding: 8px 12px;
+      padding-left: 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  height: auto;
+}
+
+  </style>
+</head>
+<body>
+
+  <!--Navbar-->
+  <button class="toggle-button" onclick="toggleNavbar()"><i class="fa fa-bars" style="width: 20px;"></i></button>
+
+<div class="navbar hidden" id="navbar">
+  <a href="#" class="active">
+    <i class="fa fa-home"></i>
+    <span>Página Inicial</span>
+  </a>
+  <a href="#">
+    <i class="fa fa-envelope"></i>
+    <span>Mensagens</span>
+  </a>
+  <a href="cronometro.html">
+    <i class="fa fa-stopwatch"></i>
+    <span>Cronômetro</span>
+  </a>
+  <a href="#">
+    <i class="fa fa-user"></i>
+    <span>Cadastro</span>
+  </a>
+  <a href="configuração.html">
+    <i class="fa fa-cog"></i>
+    <span>Configurações</span>
+  </a>
+</div>
+  <h1>Tutorial Lavanderia Cristal Self Service</h1>
+
+  <h2>Passo 1: Separar a roupa no Cesto Medida</h2>
+  <p>
+    Na Lavanderia Cristal Self Service, temos cestos medidas ideais para a lavagem das peças. Primeiro, Primeiro, coloque a quantidade de roupas de acordo com o tamanho do cesto.
+  </p>
+  <img src="passo1.jpg" alt="Passo 1">
+
+  <h2>Passo 2: Colocar as roupas na máquina</h2>
+  <p>
+    Após escolher a máquina, coloque suas roupas nela. Certifique-se de não exceder a capacidade máxima de carga da máquina.
+  </p>
+  <img src="passo2.jpg" alt="Passo 2">
+
+  <h2>Passo 3: Realizar o pagamento</h2>
+  <p>
+   Ao adicionar as roupas na máquina, é hora de realizar o pagamento no Totem. Selecione a máquina escolhida, adicione seus dados, e escolha a forma de pagamento.
+  </p>
+  <img src="passo3.jpg" alt="Passo 3">
+
+  <h2>Passo 4: Selecionar as configurações de lavagem</h2>
+  <p>
+    Escolha as configurações de lavagem apropriadas para suas roupas. Você pode ajustar o ciclo de lavagem e outras opções, se necessário.
+  </p>
+  <img src="passo4.jpg" alt="Passo 4">
+
+  <h2>Passo 5: Iniciar a lavagem</h2>
+  <p>
+    Após configurar as opções desejadas, inicie a lavagem pressionando o botão "Iniciar" na máquina de lavar, aguarde o processo de lavagem.
+  </p>
+  <img src="passo5.jpg" alt="Passo 5">
+    Repita o procedimento para realizar a secagem da roupa!
+
+  <div class="footer-navbar">
+    <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+    <a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a>
+    <a href="notificações.html"><i class='fas fa-bell fa-sm' style='color:#ffffff'></i></i> Notificações</a>
+  </div>
+
+
+  <script>
+    function toggleNavbar() {
+      var navbar = document.getElementById("navbar");
+      navbar.classList.toggle("hidden");
+    }
+    </script>
+    
+</body>
+</html>

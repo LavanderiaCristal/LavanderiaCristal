@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo de Navbar no Rodapé</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: none;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .content-logo{
+        display: flex;
+        justify-content: center;
+    }
+    .logo{
+
+        width: 20%;
+        height: auto;
+    }
+
+    .navbar {
+      height: 590px;
+      width: 200px;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      background-color: #9f00a5;
+      overflow-x: hidden;
+      padding-top: 20px;
+      transition: margin-left 0.3s;
+    }
+
+    .navbar.hidden {
+      margin-left: -200px;
+    }
+
+    .navbar a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 30px;
+      height: 80px;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #229100;
+    }
+
+    .navbar a.active {
+      background-color: #69006d;
+    }
+
+    .navbar i {
+      margin-bottom: 5px;
+    }
+
+    .navbar span {
+      font-size: 12px;
+    }
+
+
+    .content {
+      margin-left: 40px;
+      padding-top: 50px;
+      padding-right: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .toggle-button {
+      position: fixed;
+      z-index: 3;
+      top: 10px;
+      left: 10px;
+      background-color: #85008a;
+      color: #fff;
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+      border-radius: 15px;
+      transition: background-color 0.3s;
+    }
+
+ 
+
+    .toggle-button:hover {
+      background-color: #9f00a5;
+    }
+
+    /*Navbar end*/
+
+    .footer-navbar {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #9f00a5;
+      text-align: center;
+      padding: 25px 0;
+    }
+
+    .footer-navbar a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+      margin: 0 20px;
+    }
+
+    .footer-navbar a.active {
+      color: #70d300;
+    }
+
+    .footer-navbar .nav-button {
+      display: inline-block;
+      background-color: #ff0000;
+      color: #fff;
+      padding: 8px 12px;
+      padding-left: 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding-top: 50px;
+    }
+
+    .app-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 1px;
+      width: 100px;
+      height: 100px;
+      background-color: #059c00;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .app-button:hover {
+      background-color: #85008a;
+    }
+
+    .app-button i {
+      margin-bottom: 5px;
+    }
+
+    .carousel-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      overflow: hidden;
+      touch-action: pan-y;
+    }
+
+    .carousel-item {
+      width: 220px;
+      height: 220px;
+      margin: 0 10px;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      overflow: hidden;
+      display: none;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-arrows {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .carousel-arrow {
+      width: 20px;
+      height: 20px;
+      background-color: #ddd;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .carousel-arrow:hover {
+      background-color: #999;
+    }
+
+    .carousel-arrow i {
+      color: #333;
+    }
+
+    .carousel-arrow.disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .carousel-indicator {
+      width: 10px;
+      height: 10px;
+      background-color: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin: 0 5px;
+    }
+
+    .carousel-indicator.active {
+      background-color: #555;
+    }
+
+    #cookie-notification {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #4ab900;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+#cookie-notification p {
+  margin: 0;
+}
+
+#cookie-notification a {
+  color: #fff;
+}
+
+#accept-cookies {
+  background-color: #fff;
+  color: #1d1d1d;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+
+body{
+overflow: hidden;
+}
+
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Define uma camada acima do conteúdo da página */
+}
+
+#splash-image {
+  max-width: 40%;
+  max-height: 40%;
+}
+
+.splash-hidden {
+  display: none;
+  overflow: auto; /* Adiciona rolagem à página quando o splash estiver oculto */
+}
+
+    
+  </style>
+</head>
+<body>
+
+  <div id="splash">
+    <img src="img/logoedit.png" alt="Foto" id="splash-image">
+  </div>
+
+  <button class="toggle-button" onclick="toggleNavbar()"><i class="fa fa-bars" style="width: 20px;"></i></button>
+
+<div class="navbar hidden" id="navbar">
+  <a href="#" class="active">
+    <i class="fa fa-home"></i>
+    <span>Página Inicial</span>
+  </a>
+  <a href="#">
+    <i class="fa fa-envelope"></i>
+    <span>Mensagens</span>
+  </a>
+  <a href="cronometro.html">
+    <i class="fa fa-stopwatch"></i>
+    <span>Cronômetro</span>
+  </a>
+  <a href="#">
+    <i class="fa fa-user"></i>
+    <span>Cadastro</span>
+  </a>
+  <a href="configuração.html">
+    <i class="fa fa-cog"></i>
+    <span>Configurações</span>
+  </a>
+</div>
+
+   <div class="content-logo">
+       <img class="logo" src="img/logoedit.png" alt="">
+    </div>
+  <div class="button-container">
+    <a href="tutorial.html" class="app-button">
+        <i class='fas fa-tasks fa-2x' style='color:#ffffff'></i>
+      <span>Tutorial</span>
+    </a>
+    <a href="preços.html" class="app-button">
+        <i class='fas fa-donate fa-2x' style='color:#ffffff'></i>
+        <span>Preços</span>
+      </a>
+    <a href="eventos.html" class="app-button">
+      <i class='fas fa-users fa-2x' style='color:#ffffff'></i></i>        
+        <span>Eventos</span>
+    </a>
+  </div>
+
+  <div class="carousel-container">
+    <div class="carousel-item">
+      <img src="img/carrussel3.jpg" alt="Imagem 1">
+    </div>
+    <div class="carousel-item">
+      <img src="img/preço1.jpg" alt="Imagem 2">
+    </div>
+    <div class="carousel-item">
+      <img src="img/preço2.jpg" alt="Imagem 3">
+    </div>
+  </div>
+
+  <div class="carousel-arrows">
+    <div class="carousel-arrow prev">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="carousel-arrow next">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+
+  
+  <div class="carousel-indicators">
+    <div class="carousel-indicator"></div>
+    <div class="carousel-indicator"></div>
+    <div class="carousel-indicator"></div>
+  </div>
+
+  <div class="footer-navbar">
+    <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+    <a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a>
+    <a href="notificações.html"><i class='fas fa-bell fa-sm' style='color:#ffffff'></i></i> Notificações</a>
+  </div>
+
+
+  <div class="footer-navbar">
+    <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
+    <a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a>
+    <a href="notificações.html"><i class='fas fa-bell fa-sm' style='color:#ffffff'></i></i> Notificações</a>
+  </div>
+
+  <!--<div id="cookie-notification">
+    <p>Nós utilizamos cookies para melhorar a sua experiência em nosso site. Ao continuar navegando, você concorda com a nossa <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
+    <button id="accept-cookies">Aceitar</button>
+  </div>-->
+
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    var splashElement = document.getElementById("splash");
+    splashElement.style.display = "none";
+    document.body.classList.remove("splash-hidden");
+  }, 1000); // 1000 milissegundos = 3 segundos
+});
+
+
+
+
+  </script>
+
+
+<script>
+</script>
+
+
+ 
+
+<script>
+  function toggleNavbar() {
+    var navbar = document.getElementById("navbar");
+    navbar.classList.toggle("hidden");
+  }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const carouselContainer = document.querySelector(".carousel-container");
+  const carouselItems = document.querySelectorAll(".carousel-item");
+  const prevArrow = document.querySelector(".carousel-arrow.prev");
+  const nextArrow = document.querySelector(".carousel-arrow.next");
+  const indicators = document.querySelectorAll(".carousel-indicator");
+  const totalItems = carouselItems.length;
+  let currentIndex = 0;
+  let startPosX = 0;
+  let endPosX = 0;
+  let isDragging = false;
+
+  function showItem(index) {
+    carouselItems.forEach((item, i) => {
+      if (i === index) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+
+  function updateArrows() {
+    prevArrow.classList.toggle("disabled", currentIndex === 0);
+    nextArrow.classList.toggle("disabled", currentIndex === totalItems - 1);
+  }
+
+  function updateIndicators() {
+    indicators.forEach((indicator, i) => {
+      indicator.classList.toggle("active", i === currentIndex);
+    });
+  }
+
+  function prevItem() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      showItem(currentIndex);
+      updateArrows();
+      updateIndicators();
+    }
+  }
+
+  function nextItem() {
+    if (currentIndex < totalItems - 1) {
+      currentIndex++;
+      showItem(currentIndex);
+      updateArrows();
+      updateIndicators();
+    }
+  }
+
+  function goToItem(index) {
+    if (index >= 0 && index < totalItems) {
+      currentIndex = index;
+      showItem(currentIndex);
+      updateArrows();
+      updateIndicators();
+    }
+  }
+
+  prevArrow.addEventListener("click", prevItem);
+  nextArrow.addEventListener("click", nextItem);
+
+  indicators.forEach((indicator, i) => {
+    indicator.addEventListener("click", () => {
+      goToItem(i);
+    });
+  });
+
+  carouselContainer.addEventListener("touchstart", function(event) {
+    startPosX = event.touches[0].clientX;
+    isDragging = true;
+  });
+
+  carouselContainer.addEventListener("touchmove", function(event) {
+    if (!isDragging) return;
+    endPosX = event.touches[0].clientX;
+  });
+
+  carouselContainer.addEventListener("touchend", function() {
+    if (!isDragging) return;
+    isDragging = false;
+    const diffX = endPosX - startPosX;
+    if (diffX > 0 && diffX > 50) {
+      prevItem();
+    } else if (diffX < 0 && Math.abs(diffX) > 50) {
+      nextItem();
+    }
+  });
+
+  showItem(currentIndex);
+  updateArrows();
+  updateIndicators();
+});
+</script>
+</body>
+</html>
+
+    
+    
+    
