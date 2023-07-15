@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: none;
+      margin: 0;
+      padding: 0;
       text-decoration: none;
       font-family: Arial, Helvetica, sans-serif;
     }
@@ -20,13 +22,13 @@
         justify-content: center;
     }
     .logo{
-
-        width: 20%;
+        width: 40%;
+        max-width: 200px;
         height: auto;
     }
 
     .navbar {
-      height: 590px;
+      height: 100vh;
       width: 200px;
       position: fixed;
       z-index: 2;
@@ -92,8 +94,6 @@
       border-radius: 15px;
       transition: background-color 0.3s;
     }
-
- 
 
     .toggle-button:hover {
       background-color: #9f00a5;
@@ -174,8 +174,8 @@
     }
 
     .carousel-item {
-      width: 220px;
-      height: 220px;
+      width: 100%;
+      height: auto;
       margin: 0 10px;
       border: 1px solid #ddd;
       border-radius: 15px;
@@ -238,62 +238,93 @@
     }
 
     #cookie-notification {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #4ab900;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #4ab900;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
 
-#cookie-notification p {
-  margin: 0;
-}
+    #cookie-notification p {
+      margin: 0;
+    }
 
-#cookie-notification a {
-  color: #fff;
-}
+    #cookie-notification a {
+      color: #fff;
+    }
 
-#accept-cookies {
-  background-color: #fff;
-  color: #1d1d1d;
-  border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
-  cursor: pointer;
-}
+    #accept-cookies {
+      background-color: #fff;
+      color: #1d1d1d;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
 
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999; /* Define uma camada acima do conteúdo da página */
+    }
 
-body{
-overflow: hidden;
-}
+    #splash-image {
+      max-width: 40%;
+      max-height: 40%;
+    }
 
-#splash {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999; /* Define uma camada acima do conteúdo da página */
-}
+    .splash-hidden {
+      display: none;
+      overflow: auto; /* Adiciona rolagem à página quando o splash estiver oculto */
+    }
 
-#splash-image {
-  max-width: 40%;
-  max-height: 40%;
-}
+    @media only screen and (max-width: 768px) {
+      .navbar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding-top: 0;
+      }
 
-.splash-hidden {
-  display: none;
-  overflow: auto; /* Adiciona rolagem à página quando o splash estiver oculto */
-}
+      .navbar.hidden {
+        margin-left: 0;
+      }
 
-    
+      .logo {
+        width: 80%;
+        max-width: 150px;
+      }
+
+      .content {
+        margin-left: 20px;
+      }
+
+      .toggle-button {
+        top: 15px;
+        left: 15px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      .button-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .carousel-item {
+        margin: 0 5px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -304,44 +335,45 @@ overflow: hidden;
 
   <button class="toggle-button" onclick="toggleNavbar()"><i class="fa fa-bars" style="width: 20px;"></i></button>
 
-<div class="navbar hidden" id="navbar">
-  <a href="index.html" class="active">
-    <i class="fa fa-home"></i>
-    <span>Página Inicial</span>
-  </a>
-  <a href="#">
-    <i class="fa fa-envelope"></i>
-    <span>Mensagens</span>
-  </a>
-  <a href="cristal Mobile/cronometro.html">
-    <i class="fa fa-stopwatch"></i>
-    <span>Cronômetro</span>
-  </a>
-  <a href="#">
-    <i class="fa fa-user"></i>
-    <span>Cadastro</span>
-  </a>
-  <a href="cristal Mobile/configuração.html">
-    <i class="fa fa-cog"></i>
-    <span>Configurações</span>
-  </a>
-</div>
+  <div class="navbar hidden" id="navbar">
+    <a href="index.html" class="active">
+      <i class="fa fa-home"></i>
+      <span>Página Inicial</span>
+    </a>
+    <a href="#">
+      <i class="fa fa-envelope"></i>
+      <span>Mensagens</span>
+    </a>
+    <a href="cristal Mobile/cronometro.html">
+      <i class="fa fa-stopwatch"></i>
+      <span>Cronômetro</span>
+    </a>
+    <a href="#">
+      <i class="fa fa-user"></i>
+      <span>Cadastro</span>
+    </a>
+    <a href="cristal Mobile/configuração.html">
+      <i class="fa fa-cog"></i>
+      <span>Configurações</span>
+    </a>
+  </div>
 
-   <div class="content-logo">
-       <img class="logo" src="cristal Mobile/img/logoedit.png" alt="">
-    </div>
+  <div class="content-logo">
+    <img class="logo" src="cristal Mobile/img/logoedit.png" alt="">
+  </div>
+
   <div class="button-container">
     <a href="cristal Mobile/tutorial.html" class="app-button">
-        <i class='fas fa-tasks fa-2x' style='color:#ffffff'></i>
+      <i class='fas fa-tasks fa-2x' style='color:#ffffff'></i>
       <span>Tutorial</span>
     </a>
     <a href="cristal Mobile/preços.html" class="app-button">
-        <i class='fas fa-donate fa-2x' style='color:#ffffff'></i>
-        <span>Preços</span>
-      </a>
+      <i class='fas fa-donate fa-2x' style='color:#ffffff'></i>
+      <span>Preços</span>
+    </a>
     <a href="cristal Mobile/eventos.html" class="app-button">
-      <i class='fas fa-users fa-2x' style='color:#ffffff'></i></i>        
-        <span>Eventos</span>
+      <i class='fas fa-users fa-2x' style='color:#ffffff'></i>
+      <span>Eventos</span>
     </a>
   </div>
 
@@ -366,7 +398,6 @@ overflow: hidden;
     </div>
   </div>
 
-  
   <div class="carousel-indicators">
     <div class="carousel-indicator"></div>
     <div class="carousel-indicator"></div>
@@ -376,14 +407,7 @@ overflow: hidden;
   <div class="footer-navbar">
     <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
     <a href="cristal Mobile/sobre.html"><i class="fas fa-info-circle"></i> Sobre</a>
-    <a href="cristal Mobile/notificações.html"><i class='fas fa-bell fa-sm' style='color:#ffffff'></i></i> Notificações</a>
-  </div>
-
-
-  <div class="footer-navbar">
-    <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
-    <a href="cristal Mobile/sobre.html"><i class="fas fa-info-circle"></i> Sobre</a>
-    <a href="cristal Mobile/notificações.html"><i class='fas fa-bell fa-sm' style='color:#ffffff'></i></i> Notificações</a>
+    <a href="cristal Mobile/notificações.html"><i class='fas fa-bell fa-sm' style='color:#ffffff'></i> Notificações</a>
   </div>
 
   <!--<div id="cookie-notification">
@@ -392,128 +416,116 @@ overflow: hidden;
   </div>-->
 
   <script>
-   document.addEventListener("DOMContentLoaded", function() {
-  setTimeout(function() {
-    var splashElement = document.getElementById("splash");
-    splashElement.style.display = "none";
-    document.body.classList.remove("splash-hidden");
-  }, 1000); // 1000 milissegundos = 3 segundos
-});
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() {
+        var splashElement = document.getElementById("splash");
+        splashElement.style.display = "none";
+        document.body.classList.remove("splash-hidden");
+      }, 1000); // 1000 milissegundos = 3 segundos
+    });
 
-
-
-
+    function toggleNavbar() {
+      var navbar = document.getElementById("navbar");
+      navbar.classList.toggle("hidden");
+    }
   </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const carouselContainer = document.querySelector(".carousel-container");
+      const carouselItems = document.querySelectorAll(".carousel-item");
+      const prevArrow = document.querySelector(".carousel-arrow.prev");
+      const nextArrow = document.querySelector(".carousel-arrow.next");
+      const indicators = document.querySelectorAll(".carousel-indicator");
+      const totalItems = carouselItems.length;
+      let currentIndex = 0;
+      let startPosX = 0;
+      let endPosX = 0;
+      let isDragging = false;
 
-<script>
-</script>
-
-
- 
-
-<script>
-  function toggleNavbar() {
-    var navbar = document.getElementById("navbar");
-    navbar.classList.toggle("hidden");
-  }
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const carouselContainer = document.querySelector(".carousel-container");
-  const carouselItems = document.querySelectorAll(".carousel-item");
-  const prevArrow = document.querySelector(".carousel-arrow.prev");
-  const nextArrow = document.querySelector(".carousel-arrow.next");
-  const indicators = document.querySelectorAll(".carousel-indicator");
-  const totalItems = carouselItems.length;
-  let currentIndex = 0;
-  let startPosX = 0;
-  let endPosX = 0;
-  let isDragging = false;
-
-  function showItem(index) {
-    carouselItems.forEach((item, i) => {
-      if (i === index) {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
+      function showItem(index) {
+        carouselItems.forEach((item, i) => {
+          if (i === index) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
       }
-    });
-  }
 
-  function updateArrows() {
-    prevArrow.classList.toggle("disabled", currentIndex === 0);
-    nextArrow.classList.toggle("disabled", currentIndex === totalItems - 1);
-  }
+      function updateArrows() {
+        prevArrow.classList.toggle("disabled", currentIndex === 0);
+        nextArrow.classList.toggle("disabled", currentIndex === totalItems - 1);
+      }
 
-  function updateIndicators() {
-    indicators.forEach((indicator, i) => {
-      indicator.classList.toggle("active", i === currentIndex);
-    });
-  }
+      function updateIndicators() {
+        indicators.forEach((indicator, i) => {
+          indicator.classList.toggle("active", i === currentIndex);
+        });
+      }
 
-  function prevItem() {
-    if (currentIndex > 0) {
-      currentIndex--;
+      function prevItem() {
+        if (currentIndex > 0) {
+          currentIndex--;
+          showItem(currentIndex);
+          updateArrows();
+          updateIndicators();
+        }
+      }
+
+      function nextItem() {
+        if (currentIndex < totalItems - 1) {
+          currentIndex++;
+          showItem(currentIndex);
+          updateArrows();
+          updateIndicators();
+        }
+      }
+
+      function goToItem(index) {
+        if (index >= 0 && index < totalItems) {
+          currentIndex = index;
+          showItem(currentIndex);
+          updateArrows();
+          updateIndicators();
+        }
+      }
+
+      prevArrow.addEventListener("click", prevItem);
+      nextArrow.addEventListener("click", nextItem);
+
+      indicators.forEach((indicator, i) => {
+        indicator.addEventListener("click", () => {
+          goToItem(i);
+        });
+      });
+
+      carouselContainer.addEventListener("touchstart", function(event) {
+        startPosX = event.touches[0].clientX;
+        isDragging = true;
+      });
+
+      carouselContainer.addEventListener("touchmove", function(event) {
+        if (!isDragging) return;
+        endPosX = event.touches[0].clientX;
+      });
+
+      carouselContainer.addEventListener("touchend", function() {
+        if (!isDragging) return;
+        isDragging = false;
+        const diffX = endPosX - startPosX;
+        if (diffX > 0 && diffX > 50) {
+          prevItem();
+        } else if (diffX < 0 && Math.abs(diffX) > 50) {
+          nextItem();
+        }
+      });
+
       showItem(currentIndex);
       updateArrows();
       updateIndicators();
-    }
-  }
-
-  function nextItem() {
-    if (currentIndex < totalItems - 1) {
-      currentIndex++;
-      showItem(currentIndex);
-      updateArrows();
-      updateIndicators();
-    }
-  }
-
-  function goToItem(index) {
-    if (index >= 0 && index < totalItems) {
-      currentIndex = index;
-      showItem(currentIndex);
-      updateArrows();
-      updateIndicators();
-    }
-  }
-
-  prevArrow.addEventListener("click", prevItem);
-  nextArrow.addEventListener("click", nextItem);
-
-  indicators.forEach((indicator, i) => {
-    indicator.addEventListener("click", () => {
-      goToItem(i);
     });
-  });
-
-  carouselContainer.addEventListener("touchstart", function(event) {
-    startPosX = event.touches[0].clientX;
-    isDragging = true;
-  });
-
-  carouselContainer.addEventListener("touchmove", function(event) {
-    if (!isDragging) return;
-    endPosX = event.touches[0].clientX;
-  });
-
-  carouselContainer.addEventListener("touchend", function() {
-    if (!isDragging) return;
-    isDragging = false;
-    const diffX = endPosX - startPosX;
-    if (diffX > 0 && diffX > 50) {
-      prevItem();
-    } else if (diffX < 0 && Math.abs(diffX) > 50) {
-      nextItem();
-    }
-  });
-
-  showItem(currentIndex);
-  updateArrows();
-  updateIndicators();
-});
-</script>
+  </script>
 </body>
 </html>
 
