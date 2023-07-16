@@ -1,23 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Lavanderia Cristal</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    
+    <title>Document</title>
+    <style>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
-  <style>
-    body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+         body {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-
-.navbar {
-      height: 590px;
+    .content-logo{
+        display: flex;
+        justify-content: center;
+    }
+    .logo{
+        width: 10%;
+        max-width: 50px;
+        height: auto;
+    }
+    .navbar {
+      height: 690px;
       width: 200px;
       position: fixed;
       z-index: 2;
@@ -124,7 +137,7 @@
       font-weight: bold;
     }
 
-header {
+    header {
   background-color: #9f00a5;
   padding: 20px;
 }
@@ -166,44 +179,41 @@ footer {
   text-align: center;
 }
 
-  </style>
-</head>
-<body>
-  <header>
 
+    </style>
+</head>
+
+
+<body>
 
     <!--Navbar-->
     <button class="toggle-button" onclick="toggleNavbar()"><i class="fa fa-bars" style="width: 20px;"></i></button>
 
-    <div class="navbar hidden" id="navbar">
-      <a href="index.html" class="active">
-        <i class="fa fa-home"></i>
-        <span>Página Inicial</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-envelope"></i>
-        <span>Mensagens</span>
-      </a>
-      <a href="cronometro.html">
-        <i class="fa fa-stopwatch"></i>
-        <span>Cronômetro</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-user"></i>
-        <span>Cadastro</span>
-      </a>
-      <a href="configuração.html">
-        <i class="fa fa-cog"></i>
-        <span>Configurações</span>
-      </a>
-    </div>
-    
-    <h1>___Lavanderia Cristal</h1>
-    <nav>
-    </nav>
-  </header>
+<div class="navbar hidden" id="navbar">
+  <a href="#" class="active">
+    <i class="fa fa-home"></i>
+    <span>Página Inicial</span>
+  </a>
+  <a href="#">
+    <i class="fa fa-envelope"></i>
+    <span>Mensagens</span>
+  </a>
+  <a href="cronometro.html">
+    <i class="fa fa-stopwatch"></i>
+    <span>Cronômetro</span>
+  </a>
+  <a href="#">
+    <i class="fa fa-user"></i>
+    <span>Cadastro</span>
+  </a>
+  <a href="configuração.html">
+    <i class="fa fa-cog"></i>
+    <span>Configurações</span>
+  </a>
+</div>
 
-  <section id="sobre">
+
+<section id="sobre">
     <h2>Sobre</h2>
     <p>
       A Lavanderia Cristal é uma lavanderia self service moder
@@ -225,23 +235,35 @@ footer {
     </ul>
   </section>
 
-  <div class="footer-navbar">
-    <a href="index.html"><i class="fas fa-home"></i> Home</a>
-    <a href="sobre.html" class="active"><i class="fas fa-info-circle"></i> Sobre</a>
-    <a href="notificações.html"><i class='fas fa-bell fa-sm' style='color:#ffffff'></i></i> Notificações</a>
-  </div>
-
-  <footer>
-    <p>&copy; 2023 Lavanderia Cristal. Todos os direitos reservados.</p>
-  </footer>
-
-
   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() {
+        var splashElement = document.getElementById("splash");
+        splashElement.style.display = "none";
+        document.body.classList.remove("splash-hidden");
+      }, 1000); // 1000 milissegundos = 3 segundos
+    });
+
     function toggleNavbar() {
       var navbar = document.getElementById("navbar");
       navbar.classList.toggle("hidden");
     }
-    </script>
+  </script>
+
+  
     
+    <div class="footer-navbar">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="sobre.html" class="active"><i class="fas fa-info-circle"></i> Sobre</a>
+        <a href="notificações.html"><i class='fas fa-bell fa-sm' style='color:#ffffff'></i></i> Notificações</a>
+      </div>
+
+      <script>
+        function toggleNavbar() {
+          var navbar = document.getElementById("navbar");
+          navbar.classList.toggle("hidden");
+        }
+        </script>
+        
 </body>
 </html>
