@@ -1,16 +1,20 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Protótipo | Lavanderia Cristal</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    
+    <title>Document</title>
+    <style>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
-  <style>
-    body {
+         body {
       margin: 0;
       padding: 0;
       text-decoration: none;
@@ -26,8 +30,7 @@
         max-width: 200px;
         height: auto;
     }
-
-      .navbar {
+         .navbar {
       height: 590px;
       width: 200px;
       position: fixed;
@@ -135,64 +138,7 @@
       font-weight: bold;
     }
 
-   
-    .footer-navbar a {
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 18px;
-      margin: 0 30px;
-    }
-
-
-    .footer-navbar a.active {
-      color: #70d300;
-    }
-
-    .footer-navbar .nav-button {
-      display: inline-block;
-      background-color: #ff0000;
-      color: #fff;
-      padding: 8px 12px;
-      padding-left: 20px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .button-container {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-      padding-top: 50px;
-    }
-
-    .app-button {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding-top: 1px;
-      margin: 6px;
-      width: 400px;
-      height: 400px;
-      background-color: #059c00;
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      font-size: 12px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .app-button:hover {
-      background-color: #85008a;
-    }
-
-    .app-button i {
-      margin-bottom: 5px;
-    }
-
-    .carousel-container {
+      .carousel-container {
       display: flex;
       justify-content: center;
       margin-top: 20px;
@@ -315,78 +261,71 @@
       overflow: auto; /* Adiciona rolagem à página quando o splash estiver oculto */
     }
 
-    @media only screen and (max-width: 768px) {
-      .navbar {
-        width: 100%;
-        height: auto;
-        position: fixed;
-        padding-top: 0;
-      }
 
-      .navbar.hidden {
-        margin-left: 0;
-      }
-
-      .logo {
-        width: 80%;
-        max-width: 150px;
-      }
-
-      .content {
-        margin-left: 20px;
-      }
-
-      .toggle-button {
-        top: 15px;
-        left: 15px;
-        padding: 10px;
-        border-radius: 10px;
-        width: 20px;
-
-      }
-
-      .button-container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .carousel-item {
-        margin: 0 5px;
-      }
+     .app-button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding-top: 1px;
+      margin: 6px;
+      width: 400px;
+      height: 400px;
+      background-color: #059c00;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s;
     }
-  </style>
+
+    .app-button:hover {
+      background-color: #85008a;
+    }
+
+    .app-button i {
+      margin-bottom: 5px;
+    }
+
+    </style>
 </head>
+
+
 <body>
 
-  <div id="splash">
+    <!--Navbar-->
+    <button class="toggle-button" onclick="toggleNavbar()"><i class="fa fa-bars" style="width: 20px;"></i></button>
+
+<div class="navbar hidden" id="navbar">
+  <a href="#" class="active">
+    <i class="fa fa-home"></i>
+    <span>Página Inicial</span>
+  </a>
+  <a href="#">
+    <i class="fa fa-envelope"></i>
+    <span>Mensagens</span>
+  </a>
+  <a href="cronometro.html">
+    <i class="fa fa-stopwatch"></i>
+    <span>Cronômetro</span>
+  </a>
+  <a href="#">
+    <i class="fa fa-user"></i>
+    <span>Cadastro</span>
+  </a>
+  <a href="configuração.html">
+    <i class="fa fa-cog"></i>
+    <span>Configurações</span>
+  </a>
+</div>
+
+
+ <div id="splash">
     <img src="cristal Mobile/img/logoedit.png" alt="Foto" id="splash-image">
   </div>
 
-  <button class="toggle-button" onclick="toggleNavbar()"><i class="fa fa-bars" style="width: 20px;"></i></button>
-
-  <div class="navbar hidden" id="navbar">
-    <a href="index.html" class="active">
-      <i class="fa fa-home"></i>
-      <span>Página Inicial</span>
-    </a>
-    <a href="#">
-      <i class="fa fa-envelope"></i>
-      <span>Mensagens</span>
-    </a>
-    <a href="cristal Mobile/cronometro.html">
-      <i class="fa fa-stopwatch"></i>
-      <span>Cronômetro</span>
-    </a>
-    <a href="#">
-      <i class="fa fa-user"></i>
-      <span>Cadastro</span>
-    </a>
-    <a href="cristal Mobile/configuração.html">
-      <i class="fa fa-cog"></i>
-      <span>Configurações</span>
-    </a>
-  </div>
-
+ 
   <div class="content-logo">
     <img class="logo" src="cristal Mobile/img/logoedit.png" alt="">
   </div>
@@ -555,9 +494,22 @@
       updateIndicators();
     });
   </script>
+    
+    <div class="footer-navbar">
+        <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a>
+        <a href="notificações.html"><i class='fas fa-bell fa-sm' style='color:#ffffff'></i></i> Notificações</a>
+      </div>
+
+      <script>
+        function toggleNavbar() {
+          var navbar = document.getElementById("navbar");
+          navbar.classList.toggle("hidden");
+        }
+        </script>
+        
 </body>
 </html>
-
     
     
     
