@@ -341,9 +341,42 @@
         .game-window-2:hover {
          transform: scale(1.10);
         }
+
+        .robo-image {
+    position: absolute;
+    top: 140px; /* Ajuste a posição vertical conforme necessário */
+    right: -02px; /* Ajuste a posição horizontal conforme necessário */
+    width: 450px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto;
+    z-index: 10; /* Para garantir que a imagem fique acima do conteúdo da janela do jogo */
+ /* Adicione a animação ao robozinho */
+ animation: moveRobo 1s linear infinite;
+}
+
+/* Estilo opcional para a imagem do robozinho flutuante */
+.robo-image img {
+    transition: transform 0.3s ease;
+}
+
+.robo-image img:hover {
+    transform: scale(1.1);
+}
+
+/* Defina a animação com @keyframes */
+@keyframes moveRobo {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
         
         .section2 {
-            padding: 10px;
+            padding: 100px;
             margin:1px;
             display: flex;
             flex-wrap: wrap;
@@ -397,13 +430,14 @@
       </section>
 
       <section class="section2">
-
         <div class="game-window-2">
             <h1 id="typed-text"></h1>
+            <div class="robo-image">
+                <img src="img/botcristal.png" alt="Robozinho">
         </div>
-       
         
-        </section>
+        </div>
+    </section>
 
 
         <section class="section3">
